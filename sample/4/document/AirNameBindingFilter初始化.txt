@@ -1,0 +1,48 @@
+AirNameBindingFilter.<init>() line: 23	
+NativeConstructorAccessorImpl.newInstance0(Constructor, Object[]) line: not available [native method]	
+NativeConstructorAccessorImpl.newInstance(Object[]) line: 57	
+DelegatingConstructorAccessorImpl.newInstance(Object[]) line: 45	
+Constructor<T>.newInstance(Object...) line: 526	
+ReflectionHelper.makeMe(Constructor<?>, Object[]) line: 1092	
+ClazzCreator<T>.createMe(Map<Injectee,Object>) line: 261	
+ClazzCreator<T>.create(ServiceHandle<?>, SystemDescriptor<?>) line: 336	
+SystemDescriptor<T>.create(ServiceHandle<?>) line: 454	
+SingletonContext.findOrCreate(ActiveDescriptor<T>, ServiceHandle<?>) line: 119	
+Utilities.createService(ActiveDescriptor<T>, Injectee, ServiceLocatorImpl, ServiceHandle<T>, Class<?>) line: 2296	
+ServiceHandleImpl<T>.getService(ServiceHandle<T>) line: 98	
+ServiceHandleImpl<T>.getService() line: 87	
+Providers.getAllRankedProviders(ServiceLocator, Class<T>) line: 234	
+ApplicationHandler.getProcessingProviders(ComponentBag) line: 601	
+ApplicationHandler.initialize() line: 409	
+ApplicationHandler.access$500(ApplicationHandler) line: 161	
+ApplicationHandler$3.run() line: 286	
+Errors$2.call() line: 289	
+Errors$2.call() line: 286	
+Errors.process(Callable<T>, boolean) line: 315	
+Errors.process(Producer<T>, boolean) line: 297	
+Errors.processWithException(Runnable) line: 286	
+ApplicationHandler.<init>(Application) line: 283	
+TIAOPJTFTest(JerseyTest).<init>() line: 140	
+TIAOPJTFTest.<init>() line: 21	
+NativeConstructorAccessorImpl.newInstance0(Constructor, Object[]) line: not available [native method]	
+NativeConstructorAccessorImpl.newInstance(Object[]) line: 57	
+DelegatingConstructorAccessorImpl.newInstance(Object[]) line: 45	
+Constructor<T>.newInstance(Object...) line: 526	
+BlockJUnit4ClassRunner.createTest() line: 195	
+BlockJUnit4ClassRunner$1.runReflectiveCall() line: 244	
+BlockJUnit4ClassRunner$1(ReflectiveCallable).run() line: 12	
+BlockJUnit4ClassRunner.methodBlock(FrameworkMethod) line: 241	
+BlockJUnit4ClassRunner.runChild(FrameworkMethod, RunNotifier) line: 70	
+BlockJUnit4ClassRunner.runChild(Object, RunNotifier) line: 50	
+ParentRunner$3.run() line: 238	
+ParentRunner$1.schedule(Runnable) line: 63	
+BlockJUnit4ClassRunner(ParentRunner<T>).runChildren(RunNotifier) line: 236	
+ParentRunner<T>.access$000(ParentRunner, RunNotifier) line: 53	
+ParentRunner$2.evaluate() line: 229	
+BlockJUnit4ClassRunner(ParentRunner<T>).run(RunNotifier) line: 309	
+JUnit4TestClassReference(JUnit4TestReference).run(TestExecution) line: 50	
+TestExecution.run(ITestReference[]) line: 38	
+RemoteTestRunner.runTests(String[], String, TestExecution) line: 467	
+RemoteTestRunner.runTests(TestExecution) line: 683	
+RemoteTestRunner.run() line: 390	
+RemoteTestRunner.main(String[]) line: 197	

@@ -1,0 +1,1 @@
+mysql -uroot -p < database.sql

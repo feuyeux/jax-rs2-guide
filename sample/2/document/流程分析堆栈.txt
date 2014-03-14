@@ -1,0 +1,94 @@
+ServerRuntime$1.run() line: 237	
+	final Ref<Endpoint> endpointRef = Refs.emptyRef();
+    final ContainerRequest data = Stages.process(request, requestProcessingRoot, endpointRef);
+	final Endpoint endpoint = endpointRef.get();
+	.....
+	asyncContextFactoryProvider.get().set(asyncResponderHolder);
+	final ContainerResponse response = endpoint.apply(data);
+
+public static <DATA, RESULT, T extends Inflector<DATA, RESULT>> DATA process(
+		DATA data,
+		Stage<DATA> rootStage,
+		Ref<T> inflectorRef) {
+	Stage<DATA> lastStage = rootStage;
+	Stage.Continuation<DATA> continuation = Stage.Continuation.of(data, lastStage); //final DATA result, Stage<DATA> next
+	while (continuation.next() != null) {
+		lastStage = continuation.next();
+		continuation = lastStage.apply(continuation.result());
+	}
+	inflectorRef.set(Stages.<DATA, RESULT, T>extractInflector(lastStage));
+	return continuation.result();
+}
+==
+final Stage<ContainerRequest> rootStage = Stages
+	1.chain(locator.createAndInitialize(ReferencesInitializer.class))
+	2.to(locator.createAndInitialize(ContainerMessageBodyWorkersInitializer.class))
+	3.to(preMatchRequestFilteringStage)
+	4.to(routingStage)
+	5.to(resourceFilteringStage)
+	6.build(routedInflectorExtractorStage);
+
+1
+lastStage	Stages$LinkedStage<DATA>  (id=5104)	
+	nextStage	Stages$LinkedStage<DATA>  (id=5106)	
+	transformation	ReferencesInitializer  (id=5107)	
+		containerRequestRefProvider	IterableProviderImpl<T>  (id=6017)	
+		httpHeadersInjectee	HttpHeadersInjectee$$EnhancerByCGLIB$$f2bf78e4  (id=6018)	
+		locator	ServiceLocatorImpl  (id=5899)	
+		requestInjectee	RequestInjectee$$EnhancerByCGLIB$$79080a2  (id=6019)	
+		requestRefProvider	IterableProviderImpl<T>  (id=6020)	
+		securityContextInjectee	SecurityContextInjectee$$EnhancerByCGLIB$$93224722  (id=6021)	
+		uriInfoInjectee	UriInfoInjectee$$EnhancerByCGLIB$$d10784ac  (id=6023)	
+		uriRoutingCtxProvider	IterableProviderImpl<T>  (id=6024)	
+2
+lastStage	Stages$LinkedStage<DATA>  (id=5106)	
+	nextStage	ContainerFilteringStage  (id=5132)	
+	transformation	ContainerMessageBodyWorkersInitializer  (id=5131)	
+		workersFactory	IterableProviderImpl<T>  (id=6040)	
+3
+lastStage	ContainerFilteringStage  (id=5132)	
+	locator	ServiceLocatorImpl  (id=5899)	
+	nextStage	RoutingStage  (id=5900)	
+		nextStage	ContainerFilteringStage  (id=5926)	
+		routingContextFactory	IterableProviderImpl<T>  (id=5927)	
+		routingRoot	MatchResultInitializerRouter  (id=5928)	
+	requestFilters	ArrayList<E>  (id=5901)	
+	respondingContextFactory	IterableProviderImpl<T>  (id=5902)	
+	responseFilters	HashMap$Values  (id=5903)	
+4
+lastStage	RoutingStage  (id=5900)	
+	nextStage	ContainerFilteringStage  (id=5926)	
+	routingContextFactory	IterableProviderImpl<T>  (id=5927)	
+		locator	ServiceLocatorImpl  (id=5899)	
+		requiredQualifiers	Collections$UnmodifiableSet<E>  (id=6027)	
+		requiredType	Class<T> (org.glassfish.jersey.server.internal.routing.RoutingContext) (id=1099)	
+		unqualified	null	
+	routingRoot	MatchResultInitializerRouter  (id=5928)	
+5
+lastStage	ContainerFilteringStage  (id=5926)	
+	locator	ServiceLocatorImpl  (id=5899)	
+	nextStage	RoutedInflectorExtractorStage  (id=5930)	
+		routingContextFactory	IterableProviderImpl<T>  (id=5934)	
+	requestFilters	HashMap$Values  (id=5931)	
+	respondingContextFactory	IterableProviderImpl<T>  (id=5932)	
+	responseFilters	null	
+6
+lastStage	RoutedInflectorExtractorStage  (id=5930)	
+	routingContextFactory	IterableProviderImpl<T>  (id=5934)	
+7
+lastStage	Stages$InflectingStage<DATA,RESULT>  (id=6151)	
+	inflector	ResourceMethodInvoker  (id=80)	
+
+==
+continuation	Stage$Continuation<DATA>  (id=6184)	
+	next	Stages$LinkedStage<DATA>  (id=6172)	
+	result	ContainerResponse  (id=6168)	
+
+continuation	Stage$Continuation<DATA>  (id=6193)	
+	next	ContainerFilteringStage$ResponseFilterStage  (id=6194)	
+	result	ContainerResponse  (id=6168)	
+
+continuation	Stage$Continuation<DATA>  (id=6197)	
+	next	null	
+	result	ContainerResponse  (id=6168)		
+	

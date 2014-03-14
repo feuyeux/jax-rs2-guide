@@ -1,0 +1,2 @@
+http://maven.apache.org/plugins/maven-javadoc-plugin/examples/fix-javadocs.html
+mvn javadoc:fix -DcomparisonVersion=1.0
