@@ -26,5 +26,5 @@ public interface BookResource {
     public void delete(@QueryParam("bookId") final long bookId);
 
     @MOVE
-    public boolean updateBooks(Books books);
+    public boolean moveBooks(Books books);
 }

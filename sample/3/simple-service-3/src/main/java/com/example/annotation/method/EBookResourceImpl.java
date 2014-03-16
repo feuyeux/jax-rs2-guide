@@ -40,7 +40,7 @@ public class EBookResourceImpl implements BookResource {
 
 
     @Override
-    public boolean updateBooks(Books books) {
+    public boolean moveBooks(Books books) {
     	LOGGER.debug("MOVE method");
         return true;
     }
