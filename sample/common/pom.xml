@@ -9,6 +9,7 @@
 
 	<properties>
 		<JDK.version>1.7</JDK.version>
+		<jersey.version>2.9</jersey.version>
 		<eclipselink.version>2.5.0</eclipselink.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
@@ -38,7 +39,7 @@
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
-			<version>2.4</version>
+			<version>${jersey.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -51,6 +52,11 @@
 					<artifactId>commonj.sdo</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.connectors</groupId>
+			<artifactId>jersey-apache-connector</artifactId>
+			<version>${jersey.version}</version>
 		</dependency>
 	</dependencies>
 </project>

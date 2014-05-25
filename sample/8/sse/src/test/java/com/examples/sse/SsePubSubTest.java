@@ -12,13 +12,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Application;
 
-import org.apache.http.conn.scheme.PlainSocketFactory;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.scheme.SchemeRegistry;
-import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.log4j.Logger;
-import org.glassfish.jersey.apache.connector.ApacheClientProperties;
-import org.glassfish.jersey.apache.connector.ApacheConnector;
 import org.glassfish.jersey.client.ChunkedInput;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
@@ -31,12 +25,11 @@ import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.example.client.AtupClientUtil;
+
 public class SsePubSubTest extends JerseyTest {
     private static final Logger LOG = Logger.getLogger(SsePubSubTest.class);
     private static final String ROOT_PATH = "pubsub";
-
-    private static final int MAX_LISTENERS = 5;
-    private static final int MAX_ITEMS = 10;
     private static final int READ_TIMEOUT = 30000;
 
     @Override
@@ -44,7 +37,7 @@ public class SsePubSubTest extends JerseyTest {
         return new ResourceConfig(AirSsePubSubResource.class, SseFeature.class);
     }
 
-    @Override
+    /*@Override
     protected void configureClient(ClientConfig config) {
         SchemeRegistry registry = new SchemeRegistry();
         registry.register(new Scheme("http", getPort(), PlainSocketFactory.getSocketFactory()));
@@ -55,7 +48,14 @@ public class SsePubSubTest extends JerseyTest {
 
         config.register(SseFeature.class).property(ApacheClientProperties.CONNECTION_MANAGER, cm).property(ClientProperties.READ_TIMEOUT, READ_TIMEOUT)
                 .connector(new ApacheConnector(config));
-    }
+    }*/
+    
+	@Override
+	protected void configureClient(ClientConfig config) {
+		AtupClientUtil.buildeApacheConfig(config);
+		config.property(ClientProperties.READ_TIMEOUT, READ_TIMEOUT);
+		config.register(SseFeature.class);
+	}
 
     @Test
     public void testEventSource() throws InterruptedException, URISyntaxException {

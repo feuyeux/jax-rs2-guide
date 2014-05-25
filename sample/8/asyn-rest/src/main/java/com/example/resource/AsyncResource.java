@@ -29,7 +29,8 @@ import com.example.service.BookService;
 @Path("books")
 public class AsyncResource {
     private static final Logger LOGGER = Logger.getLogger(AsyncResource.class);
-    public static final long TIMEOUT = 120;
+    public static final long TIMEOUT = 120;    
+    
     @Autowired
     private BookService bookService;
 

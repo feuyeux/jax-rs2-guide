@@ -28,6 +28,7 @@ public class AirSsePubSubResource {
     @Produces(SseFeature.SERVER_SENT_EVENTS)
     public EventOutput publishLongMessage() {
         final EventOutput eventOutput0 = new EventOutput();
+        LOG.info("Start to open sse channel.");
         new Thread() {
             public void run() {
                 try {
