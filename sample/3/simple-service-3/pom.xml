@@ -11,7 +11,7 @@
 
     <properties>
         <JDK.version>1.7</JDK.version>
-        <jersey.version>2.7</jersey.version>
+        <jersey.version>2.9</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>4.11</junit.version>
         <slf4j.version>1.4.3</slf4j.version>

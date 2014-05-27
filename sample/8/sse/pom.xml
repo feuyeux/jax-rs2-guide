@@ -8,7 +8,7 @@
 	<name>sse</name>
 	<properties>
 		<JDK.version>1.7</JDK.version>
-		<jersey.version>2.8</jersey.version>
+		<jersey.version>2.9</jersey.version>
 
 		<junit.version>4.11</junit.version>
 		<slf4j.version>1.4.3</slf4j.version>
