@@ -1,24 +1,20 @@
 package com.example.filter.log;
 
-import java.io.IOException;
-import java.net.URI;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
+import org.apache.log4j.Logger;
+import org.glassfish.jersey.message.internal.HeaderUtils;
 
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.ClientResponseContext;
 import javax.ws.rs.client.ClientResponseFilter;
-import javax.ws.rs.container.ContainerRequestContext;
-import javax.ws.rs.container.ContainerRequestFilter;
-import javax.ws.rs.container.ContainerResponseContext;
-import javax.ws.rs.container.ContainerResponseFilter;
-import javax.ws.rs.container.PreMatching;
+import javax.ws.rs.container.*;
 import javax.ws.rs.core.MultivaluedMap;
-
-import org.apache.log4j.Logger;
-import org.glassfish.jersey.message.internal.HeadersFactory;
+import java.io.IOException;
+import java.net.URI;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
+/*import org.glassfish.jersey.message.internal.HeadersFactory;*/
 
 @PreMatching
 public class AirLogFilter implements ContainerRequestFilter, ClientRequestFilter, ContainerResponseFilter, ClientResponseFilter {
@@ -72,7 +68,7 @@ public class AirLogFilter implements ContainerRequestFilter, ClientRequestFilter
         long id = logSequence.incrementAndGet();
         StringBuilder b = new StringBuilder();
         printRequestLine(CLIENT_REQUEST, b, id, context.getMethod(), context.getUri());
-        printPrefixedHeaders(CLIENT_REQUEST, b, id, HeadersFactory.asStringHeaders(context.getHeaders()));
+        printPrefixedHeaders(CLIENT_REQUEST, b, id, /*HeadersFactory*/HeaderUtils.asStringHeaders(context.getHeaders()));
         LOGGER.info(b.toString());
     }
 
@@ -99,7 +95,7 @@ public class AirLogFilter implements ContainerRequestFilter, ClientRequestFilter
         long id = logSequence.incrementAndGet();
         StringBuilder b = new StringBuilder();
         printResponseLine(SERVER_RESPONSE, b, id, responseContext.getStatus());
-        printPrefixedHeaders(SERVER_RESPONSE, b, id, HeadersFactory.asStringHeaders(responseContext.getHeaders()));
+        printPrefixedHeaders(SERVER_RESPONSE, b, id, /*HeadersFactory*/HeaderUtils.asStringHeaders(responseContext.getHeaders()));
         LOGGER.info(b.toString());
     }
 }

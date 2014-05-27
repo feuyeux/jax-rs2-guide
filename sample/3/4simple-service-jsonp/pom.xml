@@ -20,6 +20,7 @@
 		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
 		<maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
 		<tomcat-servlet-api.version>7.0.42</tomcat-servlet-api.version>
+   <guava.version>17.0</guava.version>
 	</properties>
 
 	<build>
@@ -133,15 +134,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+   <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
 	</dependencies>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>snapshots.codehaus.org</id>
-			<name>Codehaus.org Snapshots Maven Repository</name>
-			<url>http://nexus.codehaus.org/snapshots</url>
-			<layout>default</layout>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<repositories>
 		<repository>
