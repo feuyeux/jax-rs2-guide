@@ -1,17 +1,20 @@
-Java Restful Web Service实战
-============================
+### 《Java Restful Web Service实战》源码
 
---全面覆盖Java EE 7·JAX-RS2
-----------------------------
-
-![jax-rs-guid.png](jax-rs-guid.png)
+![jax-rs-guid.png](cover.png)
 
 [**https://github.com/feuyeux/jax-rs2-guide**](https://github.com/feuyeux/jax-rs2-guide)
 
--	始于：2013-06-27
--	示例代码历经Jersey版本：2.0--2.9
 
-### Jersey版本发布历史
+#### Jersey官方文档
+[**Jersey User Guide**](https://jersey.java.net/documentation/latest/user-guide.html)
+
+#### Jersey缺陷管理系统
+[**Jersey Jira**](https://java.net/jira/browse/JERSEY/)
+
+#### Jersey问答
+[**Jersey StackOverflow**](http://stackoverflow.com/questions/tagged/jersey)
+
+#### Jersey版本发布历史
 
 | 版本号 | 发布日期  | 重要说明                     |
 |:-------|:----------|:-----------------------------|
@@ -38,9 +41,3 @@ Java Restful Web Service实战
 | 2.1    | 15/Jul/13 |                              |
 | 2.0.1  | 03/Jan/14 |                              |
 | 2.0    | 28/May/13 | JAX-RS2初试版本              |
-
-[**Jersey User Guide**](https://jersey.java.net/documentation/latest/user-guide.html)
-
-[**Jersey Jira**](https://java.net/jira/browse/JERSEY/)
-
-[**Jersey StackOverflow**](http://stackoverflow.com/questions/tagged/jersey)
