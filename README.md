@@ -4,14 +4,20 @@
 
 [**https://github.com/feuyeux/jax-rs2-guide**](https://github.com/feuyeux/jax-rs2-guide)
 
+#### 勘误
+
+[第2印修正](erratum/1.md)
 
 #### Jersey官方文档
+
 [**Jersey User Guide**](https://jersey.java.net/documentation/latest/user-guide.html)
 
 #### Jersey缺陷管理系统
+
 [**Jersey Jira**](https://java.net/jira/browse/JERSEY/)
 
 #### Jersey问答
+
 [**Jersey StackOverflow**](http://stackoverflow.com/questions/tagged/jersey)
 
 #### Jersey版本发布历史
