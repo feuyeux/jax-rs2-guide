@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <property name="LOG_FILE" value="logs/spring-boot.log"/>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <!-- 3rd Party Loggers -->
+    <logger name="org.springframework.web" level="ERROR"/>
+    <logger name="org.springframework.boot" level="ERROR"/>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="PROJECT_DAILY"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
