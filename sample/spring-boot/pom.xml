@@ -5,8 +5,8 @@
         xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example</groupId>
-	<artifactId>spring-boot-4-jersey</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>spring-boot-4-jersey</artifactId>
     <version>1.0.0</version>
 
     <properties>

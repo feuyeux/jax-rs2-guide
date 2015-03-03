@@ -14,10 +14,6 @@ import org.springframework.web.client.RestTemplate;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Author: Eric Han
- * Date:   15/3/2
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @IntegrationTest("server.port=0")
