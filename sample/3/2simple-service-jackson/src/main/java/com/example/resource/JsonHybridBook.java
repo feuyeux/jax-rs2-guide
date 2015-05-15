@@ -16,6 +16,6 @@ public class JsonHybridBook {
 
     public JsonHybridBook() {
         bookId = "2";
-        bookName = "Java Restful Web Services使用指南";
+        bookName = "Java Restful Web Services实战";
     }
 }

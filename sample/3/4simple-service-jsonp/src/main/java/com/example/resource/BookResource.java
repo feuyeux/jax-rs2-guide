@@ -31,8 +31,8 @@ public class BookResource {
         memoryBase = com.google.common.collect.Maps.newHashMap();
         JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
 
-        JsonObject newBook1 = jsonObjectBuilder.add("bookId", 1).add("bookName", "JSF和Richfaces使用指南").add("publisher", "电子·博文").build();
-        JsonObject newBook2 = jsonObjectBuilder.add("bookId", 2).add("bookName", "Java Restful Web Services使用指南").add("publisher", "机工·华章").build();
+        JsonObject newBook1 = jsonObjectBuilder.add("bookId", 1).add("bookName", "JSF和Richfaces实战").add("publisher", "电子·博文").build();
+        JsonObject newBook2 = jsonObjectBuilder.add("bookId", 2).add("bookName", "Java Restful Web Services实战").add("publisher", "机工·华章").build();
         memoryBase.put(1L, newBook1);
         memoryBase.put(2L, newBook2);
     }

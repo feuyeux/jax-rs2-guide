@@ -1,4 +1,4 @@
-# Java Restful Web Service使用指南 #
+# Java Restful Web Service实战 #
 ## 7 REST测试 ##
 
 JerseyTest

@@ -2,12 +2,12 @@ curl http://localhost:8080/simple-service-jsonp/api/books
 [
     {
         "bookId":1,
-        "bookName":"JSF和Richfaces使用指南",
+        "bookName":"JSF和Richfaces实战",
         "publisher":"电子·博文"
     },
     {
         "bookId":2,
-        "bookName":"Java Restful Web Services使用指南",
+        "bookName":"Java Restful Web Services实战",
         "publisher":"机工·华章"
     }
 ]
@@ -15,7 +15,7 @@ curl http://localhost:8080/simple-service-jsonp/api/books
 curl http://localhost:8080/simple-service-jsonp/api/books/book?id=2
 {
     "bookId":2,
-    "bookName":"Java Restful Web Services使用指南",
+    "bookName":"Java Restful Web Services实战",
     "publisher":"机工·华章"
 }
 

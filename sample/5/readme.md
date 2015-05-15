@@ -1,4 +1,4 @@
-# Java Restful Web Service使用指南 #
+# Java Restful Web Service实战 #
 ## 5 REST客户端 ##
 
 - 参考2 JAX-RS2快速实现 5simple-service-webapp-spring-jpa-jquery

@@ -1,4 +1,4 @@
-# Java Restful Web Service使用指南 #
+# Java Restful Web Service实战 #
 ## 3 REST API设计 ##
 ### HTTP与统一接口 ###
 

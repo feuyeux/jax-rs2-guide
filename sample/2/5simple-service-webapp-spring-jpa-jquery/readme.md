@@ -25,9 +25,9 @@
 >
 jQuery <--ajax(JSON/XML) GET/POST/PUT/DELETE-->
 >
-Spring/JAX-RS(Entity/JAXB class :: annotation) <--ORM--> 
+Spring/JAX-RS(Entity/JAXB class :: annotation) <--ORM-->
 >
-JPA <--Native sql + JDBC--> 
+JPA <--Native sql + JDBC-->
 >
 Mysql DB
 
@@ -37,25 +37,25 @@ Mysql DB
 
 	curl -H "Accept:application/json" http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/book?id=1
 
-	{"bookId":1,"bookName":"Java Restful Web Service使用指南","publisher":"cmpbook"}
-	
+	{"bookId":1,"bookName":"Java Restful Web Service实战","publisher":"cmpbook"}
+
 ### Get more than one ###
 
 	curl http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/{1,2}
 	C:\Users\Administrator>curl http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/{1,2}
-	
+
 	[1/2]: http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/1 --> <stdout>
 	--_curl_--http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/1
-	<?xml version="1.0" encoding="UTF-8" standalone="yes"?><book bookId="1" bookName="Java Restful Web Service使用指南" publisher="cmpbook"/>
-	
+	<?xml version="1.0" encoding="UTF-8" standalone="yes"?><book bookId="1" bookName="Java Restful Web Service实战" publisher="cmpbook"/>
+
 	[2/2]: http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/2 --> <stdout>
 	--_curl_--http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/2
 	<?xml version="1.0" encoding="UTF-8" standalone="yes"?><book bookId="2" bookName="JSF2和RichFaces4使用指南" publisher="phei"/>
-	
+
 ### post XML ###
 
 	curl -v -X POST -H "Content-Type:application/xml" -H "Accept: application/xml" http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books --data-binary "<book bookName='JAX-RS2'/>"
-	
+
 	       > POST /simple-service-webapp-spring-jpa-jquery/webapi/books HTTP/1.1
 	       > User-Agent: curl/7.26.0
 	       > Host: localhost:8080
@@ -72,9 +72,9 @@ Mysql DB
 	       <
 	       <?xml version="1.0" encoding="UTF-8" standalone="yes"?><book bookId="14" bookName="JAX-RS2"/>
 ### PUT XML ###
-	
+
 	curl -v -X PUT -H "Content-Type:application/xml" -H "Accept: application/xml" http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/2 --data-binary "<book bookName='JAX-RS2' publisher='CMP'/>"
-	
+
 	       > PUT /simple-service-webapp-spring-jpa-jquery/webapi/books/2 HTTP/1.1
 	       > User-Agent: curl/7.26.0
 	       > Host: localhost:8080
@@ -90,12 +90,12 @@ Mysql DB
 	       < Date: Sun, 01 Sep 2013 05:36:13 GMT
 	       <
 	       <?xml version="1.0" encoding="UTF-8" standalone="yes"?><book bookId="2" bookName="JAX-RS2" publisher="CMP"/>
-	
+
 
 ### PUT json ###
-	
+
 	curl -v -X PUT -H "Content-Type:application/json" http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books/3 -d "{\"bookName\":\"JAX-RS2\",\"publisher\":\"CMP\"}"
-	
+
 	       > PUT /simple-service-webapp-spring-jpa-jquery/webapi/books/3 HTTP/1.1
 	       > User-Agent: curl/7.26.0
 	       > Host: localhost:8080
@@ -114,9 +114,9 @@ Mysql DB
 
 ### Summary ###
 
-	curl -H "Accept: application/json" http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books	
-	{"bookList":{"book":[{"bookId":1,"bookName":"Java Restful Web Service使用指南","publisher":"cmpbook"},{"bookId":2,"bookName":"JSF2和RichFaces4使用指南","publisher":"phei"}]}}
+	curl -H "Accept: application/json" http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books
+	{"bookList":{"book":[{"bookId":1,"bookName":"Java Restful Web Service实战","publisher":"cmpbook"},{"bookId":2,"bookName":"JSF2和RichFaces4使用指南","publisher":"phei"}]}}
 
 
 	curl -H "Accept: application/xml" http://localhost:8080/simple-service-webapp-spring-jpa-jquery/webapi/books
-	<?xml version="1.0" encoding="UTF-8" standalone="yes"?><books><bookList><book bookId="1" bookName="Java Restful Web Service使用指南" publisher="cmpbook"/><book bookId="2" bookName="JSF2和RichFaces4使用指南" publisher="phei"/></bookList></books>
+	<?xml version="1.0" encoding="UTF-8" standalone="yes"?><books><bookList><book bookId="1" bookName="Java Restful Web Service实战" publisher="cmpbook"/><book bookId="2" bookName="JSF2和RichFaces4使用指南" publisher="phei"/></bookList></books>

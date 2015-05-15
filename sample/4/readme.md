@@ -1,4 +1,4 @@
-# Java Restful Web Service使用指南 #
+# Java Restful Web Service实战 #
 ## 4 REST请求处理 ##
 
 ![jax-rs-2-flow](document/image/jax-rs-2-flow.png)

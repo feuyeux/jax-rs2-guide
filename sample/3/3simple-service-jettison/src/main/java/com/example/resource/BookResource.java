@@ -25,7 +25,7 @@ public class BookResource {
     private static final HashMap<Long, Book> memoryBase;
     static {
         memoryBase = com.google.common.collect.Maps.newHashMap();
-        memoryBase.put(1L, new Book(1L, "Java Restful Web Services使用指南"));
+        memoryBase.put(1L, new Book(1L, "Java Restful Web Services实战"));
         memoryBase.put(2L, new Book(2L, "Java EE 7 精髓"));
     }
 

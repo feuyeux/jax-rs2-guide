@@ -1,4 +1,4 @@
-# Java Restful Web Service使用指南 #
+# Java Restful Web Service实战 #
 ## 2 JAX-RS2快速实现 ##
 
 ### 1 第一个Java REST应用 ###

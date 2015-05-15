@@ -29,7 +29,7 @@ public class SseBroadcaseTest extends JerseyTest {
 	private final int MAX_COUNT = 3;
 	private final CountDownLatch doneLatch = new CountDownLatch(MAX_COUNT);
 	private final EventSource[] readerEventSources = new EventSource[MAX_COUNT];
-	private final String newBookName = "Java Restful Web Services使用指南";
+	private final String newBookName = "Java Restful Web Services实战";
 
 	@Override
 	protected Application configure() {

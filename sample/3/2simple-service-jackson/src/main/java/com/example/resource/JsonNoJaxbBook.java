@@ -7,7 +7,7 @@ public class JsonNoJaxbBook {
 
     public JsonNoJaxbBook() {
         bookId = "3";
-        bookName = "Java Restful Web Services使用指南";
+        bookName = "Java Restful Web Services实战";
         chapters = new String[0];
     }
 

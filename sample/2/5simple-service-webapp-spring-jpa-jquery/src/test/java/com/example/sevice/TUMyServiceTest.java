@@ -25,7 +25,7 @@ public class TUMyServiceTest {
     public void testGetAndSave() {
         final Book result = bookService.getBook(1L);
         if (result == null) {
-            final Book newBook = new Book("Java Restful Web Service使用指南");
+            final Book newBook = new Book("Java Restful Web Service实战");
             final Book result0 = bookService.saveBook(newBook);
             TUMyServiceTest.LOGGER.debug(result0);
             Assert.assertNotNull(result0.getBookId());

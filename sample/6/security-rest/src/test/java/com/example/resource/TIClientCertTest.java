@@ -44,14 +44,14 @@ public class TIClientCertTest {
 
     @Test(expected = javax.ws.rs.ForbiddenException.class)
     public void testPost() {
-        final Book newBook = new Book("Java Restful Web Service使用指南-" + System.nanoTime());
+        final Book newBook = new Book("Java Restful Web Service实战-" + System.nanoTime());
         final Entity<Book> bookEntity = Entity.entity(newBook, MediaType.APPLICATION_JSON_TYPE);
         buildSecureClient(false).target(BASE_URI).request(MediaType.APPLICATION_JSON_TYPE).post(bookEntity, Book.class);
     }
 
     @Test
     public void testPost2() {
-        String bookName = "Java Restful Web Service使用指南-" + System.nanoTime();
+        String bookName = "Java Restful Web Service实战-" + System.nanoTime();
         final Book newBook = new Book(bookName);
         final Entity<Book> bookEntity = Entity.entity(newBook, MediaType.APPLICATION_JSON_TYPE);
         Book posted = buildSecureClient(true).target(BASE_URI).request(MediaType.APPLICATION_JSON_TYPE).post(bookEntity, Book.class);

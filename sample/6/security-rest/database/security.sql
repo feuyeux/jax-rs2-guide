@@ -9,8 +9,8 @@ CREATE TABLE `simple_book` (
   UNIQUE KEY `BOOKID` (`BOOKID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 LOCK TABLES `simple_book` WRITE;
-INSERT INTO `simple_book` VALUES (1,'Java Restful Web Service使用指南','cmpbook'),
-(2,'JSF2和RichFaces4使用指南','phei');
+INSERT INTO `simple_book` VALUES (1,'Java Restful Web Service实战','cmpbook'),
+(2,'JSF2和RichFaces4实战','phei');
 UNLOCK TABLES;
 
 CREATE TABLE `user_roles` (

@@ -66,7 +66,7 @@ public class TIMyResourceJTFTest extends JerseyTest {
     @Test
     public void testPostAndDelete() {
         TIMyResourceJTFTest.LOGGER.debug(">>Test Post");
-        final Book newBook = new Book("Java Restful Web Service使用指南-" + System.nanoTime());
+        final Book newBook = new Book("Java Restful Web Service实战-" + System.nanoTime());
         final Entity<Book> bookEntity = Entity.entity(newBook, MediaType.APPLICATION_JSON_TYPE);
         final Book savedBook = target(TIMyResourceJTFTest.BASEURI).request(MediaType.APPLICATION_JSON_TYPE).post(bookEntity, Book.class);
         Assert.assertNotNull(savedBook.getBookId());

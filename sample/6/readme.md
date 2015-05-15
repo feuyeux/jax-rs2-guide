@@ -1,4 +1,4 @@
-# Java Restful Web Service使用指南 #
+# Java Restful Web Service实战 #
 ## 6 REST安全 ##
 1. JDBCRealm + BASIC认证
 2. DataSourceRealm + FORM认证
