@@ -41,7 +41,7 @@ function postBook() {
 		postData = JSON.stringify({bookName : nameValue, publisher : publisherValue});
 	}
 	rest(bookRestUrl, 'POST', postData, contentType, 'json', renderPost);
-};
+}
 /*Render DOM*/
 function renderGetAll(data) {
 	var books = data.bookList.book;

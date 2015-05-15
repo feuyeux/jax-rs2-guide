@@ -1,12 +1,9 @@
 package com.example.resource;
 
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
+import com.example.domain.Book;
+import com.example.domain.Books;
+import com.example.filter.log.AirLogFilter;
+import com.example.resource.interceptor.AirReaderWriterInterceptor;
 import org.apache.log4j.Logger;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -14,9 +11,12 @@ import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.example.domain.Book;
-import com.example.domain.Books;
-import com.example.filter.log.AirLogFilter;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 public class TIResourceJtfTest extends JerseyTest {
     private static final Logger LOGGER = Logger.getLogger(TIResourceJtfTest.class);
@@ -27,7 +27,8 @@ public class TIResourceJtfTest extends JerseyTest {
         //enable(org.glassfish.jersey.test.TestProperties.LOG_TRAFFIC);
         //enable(org.glassfish.jersey.test.TestProperties.DUMP_ENTITY);
         ResourceConfig config = new ResourceConfig(BookResource.class);
-        return config.register(com.example.filter.log.AirLogFilter.class);
+        //return config.register(com.example.filter.log.AirLogFilter.class);
+        return config.register(AirReaderWriterInterceptor.class);
     }
 
     @Override
