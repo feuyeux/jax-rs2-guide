@@ -64,7 +64,7 @@ function postBook() {
 	var nameValue = $("#bookName").val();
 	var publisherValue = $("#publisher").val();
 	if (contentType === "application/xml") {
-		postData = "<book bookName='" + nameValue + "'/>";
+		postData = "<book bookName='" + nameValue + "' publisher='" + publisherValue + "'/>";
 	} else {
 		postData = JSON.stringify({bookName : nameValue, publisher : publisherValue});
 	}
